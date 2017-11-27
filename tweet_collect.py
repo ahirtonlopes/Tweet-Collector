@@ -80,7 +80,8 @@ def get_all_tweets(screen_name):
 		
 		print "...%s tweets importados ate o momento" % (len(alltweets))
  
-	#Transforma-se os tweets em array afim de popular o arquivo .csv	
+	#Transforma-se os tweets em array afim de popular o arquivo .csv
+	#Pode-se usar, ou não, os RT's
 	outtweets = [[tweet.id_str, tweet.created_at, tweet.text.encode("utf-8")] for tweet in alltweets if (not tweet.retweeted) and ('RT @' not in tweet.text)]
 
 	#Cria-se o arquivo .csv
